@@ -1,0 +1,10 @@
+[Unit]
+Description=PowerVR SGX
+
+[Service]
+Type=simple
+ExecStartPre=/sbin/modprobe omaplfb
+ExecStart=/usr/sbin/pvrsrvinit
+
+[Install]
+WantedBy=multi-user.target

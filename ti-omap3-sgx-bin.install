@@ -1,0 +1,11 @@
+post_install() {
+	echo " >> You need to manually start and/or enable powervr service with systemctl"
+}
+
+post_upgrade() {
+	systemctl --system daemon-reload
+}
+
+pre_remove() {
+	systemctl disable powervr.service
+}
